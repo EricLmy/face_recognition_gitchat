@@ -17,6 +17,11 @@ class GenerateClass(object):
         self.face_data_path = os.path.join(self.path1, "identiffun/face_data")
         # self.knn_clf = self.get_knn_clf(os.path.join(self.path1, "identiffun/trained_knn_model.clf"))
 
+    def updata_knn_clf(self):
+        self.data_default(self.face_data_path)
+        knn_clf = self.create_KNN_classifier()
+        return knn_clf
+
     def get_knn_clf(self, clf_file_path):
         # if clf:load clf   not get clf form face_data(long time add jindutiao)
         if os.path.exists(clf_file_path):

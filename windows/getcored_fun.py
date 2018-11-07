@@ -65,9 +65,10 @@ class getDataWindows(QWidget):
 
     def pushFaceBtn_fun(self):
         try:
-            pass
             # 1. 将相应的图片保存到对应的目录下
+            self.saveBtn_fun()
             # 2. 更新clf文件即可
+            self.knn_clf = self.mygener.updata_knn_clf()
         except Exception as e:
             QMessageBox.warning(self, "ERROR", str(e), QMessageBox.Cancel)
 
